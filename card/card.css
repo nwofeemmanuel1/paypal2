@@ -1,0 +1,148 @@
+main {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding-top: 1.5%;
+  margin: auto;
+}
+main > img {
+  height: 35px;
+}
+
+main h1 {
+  font-weight: 400;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30px;
+}
+
+.card img {
+  height: 100px;
+}
+input {
+  padding: 11px;
+  width: 390px;
+  opacity: 0.8;
+}
+select {
+  padding: 11px;
+  width: 390px;
+  opacity: 0.8;
+}
+
+main #btnLogin {
+  width: 400px;
+  padding: 17px;
+  border-radius: 50px;
+  margin: auto;
+  color: white;
+  font-weight: bolder;
+  margin-top: 25px;
+}
+
+
+
+@keyframes move {
+    0% {
+      opacity: 0;
+    }
+
+    5% {
+      opacity: 1;
+       font-weight: bolder;
+     
+    }
+    70% {
+      opacity: 1;
+     font-weight: bolder;
+     
+    }
+    100% {
+      opacity: 0;
+      
+    }
+  }
+
+
+
+
+main .no-billing {
+  padding: 11px;
+  width: 390px;
+  /* opacity: 0.8; */
+  border: 1px solid gray;
+  margin: auto;
+  margin-top: 10px;
+    animation-name: move;
+    animation-direction: normal;
+    animation-duration: 2s;
+
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+
+@media (max-width: 600px) {
+  main h1 {
+    font-weight: 400;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+  }
+  input {
+    padding: 11px;
+    width: 80%;
+    opacity: 0.8;
+  }
+  select {
+    padding: 11px;
+    width: 80%;
+    opacity: 0.8;
+  }
+
+  main #btnLogin {
+    width: 70%;
+    padding: 17px;
+    border-radius: 50px;
+    margin: auto;
+    color: white;
+    font-weight: bolder;
+    margin-top: 25px;
+  }
+
+  @keyframes move {
+    0% {
+      opacity: 0;
+    }
+
+    5% {
+      opacity: 1;
+       font-weight: bolder;
+     
+    }
+    70% {
+      opacity: 1;
+     font-weight: bolder;
+     
+    }
+    100% {
+      opacity: 0;
+      
+    }
+  }
+
+  main .no-billing {
+    padding: 11px;
+    width: 80%;
+    /* opacity: 0.8; */
+    border: 1px solid gray;
+    margin: auto;
+    margin-top: 10px;
+    cursor: pointer;
+
+    animation-name: move;
+    animation-direction: normal;
+    animation-duration: 2s;
+
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+  }
+}
