@@ -1,0 +1,69 @@
+/* USUAL STUFF */
+/* body { margin:10px auto; text-align:center; } */
+.content {
+  max-width: 800px;
+  text-align: left;
+  margin: auto;
+}
+
+/* THE DIV */
+@media (max-width: 499px) {
+  .simple-ss {
+    width: 100%;
+    height: 250px;
+    background-color: red;
+    margin: auto;
+
+    background-position: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    /* ANIMATING STUFF */
+    animation-name: slide;
+    animation-duration: 14s;
+    animation-direction: normal;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+  }
+}
+
+@media (min-width: 500px) {
+  .simple-ss {
+    width: 100%;
+    height: 300px;
+    background-color: red;
+    margin: auto;
+
+    background-position: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    /* ANIMATING STUFF */
+    animation-name: slide;
+    animation-duration: 14s;
+    animation-direction: normal;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+  }
+}
+
+/* NOTE CODEPEN AUTOGENERATING -PREFIXES */
+@keyframes slide {
+  0% {
+    background-image: url("../image/code-animation.jpg");
+  }
+
+  15% {
+    background-image: url("../image/code-animation.jpg");
+  }
+
+  50% {
+    background-image: url("../image/compuer-code.jpg");
+  }
+  85% {
+    background-image: url("../image/blur-code.jpg");
+  }
+  100% {
+    background-image: url("../image/code-animation.jpg");
+  }
+}

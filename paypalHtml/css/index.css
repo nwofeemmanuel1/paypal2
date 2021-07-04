@@ -1,0 +1,557 @@
+.mySlides {
+  display: none;
+}
+
+* {
+  padding: 0%;
+  margin: 0%;
+  color: #f2f5f7;
+  /* color: gray; */
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+
+nav {
+  height: 6rem;
+  width: 100vw;
+  background-color: #131418;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  position: fixed;
+  z-index: 10;
+}
+
+/*Styling logo*/
+.logo {
+  padding: 1vh 1vw;
+  text-align: center;
+}
+.logo img {
+  height: 5rem;
+  width: 5rem;
+}
+
+/*Styling Links*/
+.nav-links {
+  display: flex;
+  list-style: none;
+  width: 88vw;
+  padding: 0 0.7vw;
+  justify-content: space-evenly;
+  align-items: center;
+  text-transform: uppercase;
+}
+.nav-links li a {
+  text-decoration: none;
+  margin: 0 0.7vw;
+}
+.nav-links li a:hover {
+  color: #61dafb;
+}
+.nav-links li {
+  position: relative;
+}
+.nav-links li a::before {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 0%;
+  background-color: #61dafb;
+  position: absolute;
+  transition: all ease-in-out 250ms;
+  margin: 0 0 0 10%;
+}
+.nav-links li a:hover::before {
+  width: 80%;
+}
+
+/*Styling Buttons*/
+.login-button {
+  background-color: transparent;
+  border: 1.5px solid #f2f5f7;
+  border-radius: 2em;
+  padding: 0.6rem 0.8rem;
+  margin-left: 2vw;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.login-button:hover {
+  color: #131418;
+  background-color: #f2f5f7;
+  border: 1.5px solid #f2f5f7;
+  transition: all ease-in-out 350ms;
+}
+.join-button {
+  color: #131418;
+  background-color: #61dafb;
+  border: 1.5px solid #61dafb;
+  border-radius: 2em;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.join-button:hover {
+  color: #f2f5f7;
+  background-color: transparent;
+  border: 1.5px solid #f2f5f7;
+  transition: all ease-in-out 350ms;
+}
+
+/*Styling Hamburger Icon*/
+.hamburger div {
+  width: 30px;
+  height: 3px;
+  background: #f2f5f7;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+.hamburger {
+  display: none;
+}
+
+/*Stying for small screens*/
+@media screen and (max-width: 800px) {
+  nav {
+    position: fixed;
+    z-index: 3;
+  }
+  .hamburger {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    z-index: 2;
+    transition: all 0.7s ease;
+  }
+  .nav-links {
+    position: fixed;
+    background: #131418;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    clip-path: circle(50px at 90% -20%);
+    -webkit-clip-path: circle(50px at 90% -10%);
+    transition: all 1s ease-out;
+    pointer-events: none;
+  }
+  .nav-links.open {
+    clip-path: circle(1000px at 90% -10%);
+    -webkit-clip-path: circle(1000px at 90% -10%);
+    pointer-events: all;
+  }
+  .nav-links li {
+    opacity: 0;
+  }
+  .nav-links li:nth-child(1) {
+    transition: all 0.5s ease 0.2s;
+  }
+  .nav-links li:nth-child(2) {
+    transition: all 0.5s ease 0.4s;
+  }
+  .nav-links li:nth-child(3) {
+    transition: all 0.5s ease 0.6s;
+  }
+  .nav-links li:nth-child(4) {
+    transition: all 0.5s ease 0.7s;
+  }
+  .nav-links li:nth-child(5) {
+    transition: all 0.5s ease 0.8s;
+  }
+  .nav-links li:nth-child(6) {
+    transition: all 0.5s ease 0.9s;
+    margin: 0;
+  }
+  .nav-links li:nth-child(7) {
+    transition: all 0.5s ease 1s;
+    margin: 0;
+  }
+  li.fade {
+    opacity: 1;
+  }
+}
+/*Animating Hamburger Icon on Click*/
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+  transition: all 0.7s ease;
+  width: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@keyframes animateimage {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes animatetext {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes animatebutton {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .mySlides {
+    position: relative;
+  }
+
+  .mySlides > img {
+    height: 410px;
+    width: 100%;
+    animation-name: animateimage;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+  }
+
+  .description1,
+  .description2,
+  .description3 {
+    left: 15%;
+    right: 15%;
+    font-size: 27px;
+    position: absolute;
+    /* font-weight: 600; */
+    top: 25%;
+    left: 15px;
+    /* text-align: center; */
+    opacity: 0;
+    animation-name: animatetext;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+
+    color: #fff;
+    /* font-size: 34px; */
+    font-weight: 555;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .description1::before {
+    content: "Hi My Name is Nwofe Emmanuel Chidera";
+  }
+
+  .description2::before {
+    content: "Am a Software Engineer with Passion for Coding";
+  }
+
+  .description3::before {
+    content: "My Mission Is To help Clients meet Their Needs ";
+  }
+
+  .mySlides > .sign_up {
+    text-decoration: none;
+    position: absolute;
+    color: white;
+    font-weight: 500;
+    border: 2px solid gray;
+    border-radius: 50px;
+    top: 80%;
+    left: 4%;
+    padding: 0.4rem 0.4rem;
+    background-color: rgb(204, 109, 109);
+    opacity: 0;
+    width: 40%;
+    animation-name: animatebutton;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 3s;
+    text-align: center;
+    transition: all;
+    transition-duration: 1s;
+  }
+
+  .mySlides > .login {
+    text-decoration: none;
+    position: absolute;
+    color: white;
+    font-weight: 500;
+    border: 2px solid gray;
+    border-radius: 50px;
+    width: 40%;
+    top: 80%;
+    left: 51%;
+    padding: 0.4rem 0.4rem;
+    background-color: black;
+    opacity: 0;
+    animation-name: animatebutton;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 3.3s;
+    text-align: center;
+    transition: all;
+    transition-duration: 1s;
+  }
+
+  .mySlides > a:hover {
+    background-color: gray;
+    color: white;
+    transform: scale3d(360deg);
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .imagee {
+    text-align: center;
+    max-height: 100%;
+  }
+
+  .mySlides {
+    position: relative;
+    height: 100%;
+  }
+
+  /* div.mySlides > img {
+    height: 100%;
+    width: 100%;
+
+    animation-name: animateimage;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+  } */
+
+  .mySlides > img {
+    height: 100%;
+    /* height: 100%; */
+    width: 100%;
+    animation-name: animateimage;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+  }
+
+  .description1,
+  .description2,
+  .description3 {
+    left: 15%;
+    right: 15%;
+    /* color: white; */
+    font-size: 30px;
+    position: absolute;
+    font-weight: 700;
+    text-align: center;
+    top: 30%;
+    opacity: 0;
+    animation-name: animatetext;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    color: #fff;
+    /* font-size: 34px; */
+    font-weight: 600;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .description1::before {
+    content: "Hi My Name is Nwofe Emmanuel Chidera  Am a Software Engineer with Passion for Coding";
+  }
+
+  .description2::before {
+    content: " My Mission Is To help Individuals and Companies meet Their Needs In the Global world of software";
+  }
+
+  .description3::before {
+    content: "Am Here to help you Develop,Test,Integrate and manage your software click  message to message me with your job";
+  }
+
+  .mySlides > .sign_up {
+    text-decoration: none;
+    position: absolute;
+    color: white;
+    font-weight: 500;
+    border: 2px solid gray;
+    border-radius: 50px;
+    top: 80%;
+    left: 8%;
+    padding: 0.6rem 1rem;
+    width: 30%;
+    background-color: dodgerblue;
+    opacity: 0;
+    background-color: rgb(204, 109, 109);
+    animation-name: animatebutton;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 3s;
+    transition: all;
+    transition-duration: 1s;
+  }
+
+  .mySlides > .login {
+    text-decoration: none;
+    position: absolute;
+    color: white;
+    font-weight: 500;
+    border: 2px solid gray;
+    border-radius: 50px;
+    top: 60%;
+    left: 62%;
+    padding: 0.6rem 1rem;
+    background-color: black;
+    opacity: 0;
+    animation-name: animatebutton;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 3.3s;
+    top: 80%;
+    width: 30%;
+    text-align: center;
+    transition: all;
+    transition-duration: 1s;
+  }
+
+  .mySlides > a:hover {
+    background-color: gray;
+    color: white;
+    transform: scale3d(360deg);
+  }
+}
+/* 
+.section{
+  background-color: red;
+} */
+
+@media screen and (min-width: 890px) {
+  .imagee {
+    text-align: center;
+    max-height: 100%;
+  }
+
+  .mySlides {
+    position: relative;
+    height: 100%;
+  }
+
+  /* div.mySlides > img {
+    height: 100%;
+    width: 100%;
+
+    animation-name: animateimage;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+  } */
+
+  .mySlides > img {
+    height: 100%;
+    /* height: 100%; */
+    width: 100%;
+    animation-name: animateimage;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+  }
+
+  .description1,
+  .description2,
+  .description3 {
+    left: 15%;
+    right: 15%;
+    /* color: white; */
+    font-size: 55px;
+    position: absolute;
+    font-weight: 700;
+    text-align: center;
+    top: 17%;
+    opacity: 0;
+    animation-name: animatetext;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    margin: auto;
+    align-self: center;
+    color: #fff;
+    /* font-size: 34px; */
+    font-weight: 650;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .description1::before {
+    content: "Hi My Name is Nwofe Emmanuel Chidera  Am a Software Engineer with Passion for Coding";
+  }
+
+  .description2::before {
+    content: " My Mission Is To help Individuals and Companies meet Their Needs In the Global world of software";
+  }
+
+  .description3::before {
+    content: "Am Here to help you Develop,Test,Integrate and manage your software click  message or contact to contact me ";
+  }
+
+  .mySlides > .sign_up {
+    text-decoration: none;
+    position: absolute;
+    color: white;
+    font-weight: 500;
+    border: 2px solid gray;
+    border-radius: 50px;
+    top: 79%;
+    left: 6%;
+    /* padding: 0.6rem 1rem; */
+    width: 30%;
+    background-color: dodgerblue;
+    opacity: 0;
+    background-color: rgb(204, 109, 109);
+    animation-name: animatebutton;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 3s;
+    padding: 15px;
+    transition: all;
+    transition-duration: 1s;
+  }
+
+  .mySlides > .login {
+    text-decoration: none;
+    position: absolute;
+    color: white;
+    font-weight: 500;
+    border: 2px solid gray;
+    border-radius: 50px;
+    top: 60%;
+    left: 65%;
+    /* padding: 0.6rem 1rem; */
+    background-color: black;
+    opacity: 0;
+    animation-name: animatebutton;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 3.3s;
+    top: 79%;
+    width: 30%;
+    text-align: center;
+    padding: 15px;
+    transition: all;
+    transition-duration: 1s;
+  }
+
+  .mySlides > a:hover {
+    background-color: gray;
+    color: white;
+    transform: scale3d(360deg);
+  }
+}
+/* 
+.section{
+  background-color: red;
+} */

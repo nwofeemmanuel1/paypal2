@@ -1,0 +1,52 @@
+.section {
+  background-image: url("image/overview.jpg");
+  position: relative;
+  bottom: 4px;
+  text-align: center;
+}
+.section > h1 {
+  color: rgb(104, 76, 76);
+  font-size: 30px;
+  font-weight: 500;
+  top: 20%;
+}
+
+@media (max-width: 499px) {
+  .section p {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+  }
+
+  .section p:hover {
+    background-color: dodgerblue;
+  }
+}
+
+@media (min-width: 500px) {
+  .section p {
+    color: #fff;
+    font-size: 25px;
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+  }
+  .section p:hover {
+    background-color: dodgerblue;
+  }
+}
+
+.section > .about {
+  padding-top: 30px;
+}
+
+.section img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.handibtc {
+  padding-top: 30px;
+}
