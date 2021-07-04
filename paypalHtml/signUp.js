@@ -25,7 +25,7 @@ const response=await fetch("http://localhost:3000/signup",{
     })
 })
 const result=await response.json()
-console.log(result)
+return result
 
 }
 
@@ -42,41 +42,66 @@ document.addEventListener("DOMContentLoaded",()=>{
     if(document.querySelector(".showError"))return document.querySelector(".showError").className="hidethree"
 }
 
+    document.getElementById("user-name").onkeyup=()=> {
+  if(document.querySelector(".showError"))  return document.querySelector(".showError").className="hidefive" 
+ 
+}
+
+
     document.getElementById("password").onkeyup=()=> {
     if(document.querySelector(".showError"))return document.querySelector(".showError").className="hidefour"
 }
 
-    document.getElementById("checkpassword").onkeyup=()=> {
-    if(document.getElementById("password").value == document.getElementById("checkpassword").value )  return document.querySelector(".showError").className="hidefive" 
-}
+
+//     document.getElementById("checkpassword").onkeyup=()=> {
+//    return document.querySelector(".showError").className="hidefive" 
+//     //  if(document.querySelector(".showError"))
+// }
 
 
-    document.getElementById("btnLogin").onclick=()=>{
+    document.getElementById("btnLogin").onclick=async()=>{
 
-
+    const phone=getCookie("phone")
+  console.log(phone)
 
       if(!document.getElementById("email").value) return document.querySelector(".hideone").className="showError"
         if(!document.getElementById("first-name").value) return document.querySelector(".hidetwo").className="showError"
      if(!document.getElementById("last-name").value) return document.querySelector(".hidethree").className="showError"
-
+ if(!document.getElementById("user-name").value) return document.querySelector(".hidefive").className="showError"
     
      if(!document.getElementById("password").value) return document.querySelector(".hidefour").className="showError"
-
-    //   if(document.getElementById("password").value.length < 8)return document.querySelector(".hidesix").className="showError2"
- 
-// return alert("password must be greater than 8")
-     if(document.getElementById("password").value !== document.getElementById("checkpassword").value )  return document.querySelector(".hidefive").className="showError"
-     const phoneNumber=getCookie("phone")
-     const email=document.getElementById("email").value
-   const  firstName= document.getElementById("first-name").value
-   const lastName=document.getElementById("last-name").value
-   const password=document.getElementById("password").value
-registerUser(phoneNumber,email,firstName,lastName,password)
-    //  alert("null")
-    //  checkpassword
-    }
+     
 
 
 
+//   if(document.getElementById("password").value !== document.getElementById("checkpassword").value){
+//       if(!document.querySelector(".showError")) return document.querySelector(".hidefive").className="showError"
+//   }
+//   const phone=getCookie("phone")
+//   console.log(phone)
+const email=document.getElementById("email").value;
+const firstName=document.getElementById("first-name").value
+const lastName=document.getElementById("last-name").value
+const password=document.getElementById("password").value
 
+document.querySelector(".overlay").style.display="block"
+document.querySelector(".loader").style.display="block"
+try{
+const response=await registerUser()
+if(response.error ==true){
+    if(!document.querySelector(".showError")) document.querySelector(".hider").className="showError"
+
+}else
+window.location.href="/address.html"
+
+}catch(err){
+    console.log(err.message)
+    if(!document.querySelector(".showError")) document.querySelector(".hider").className="showError"
+
+}
+
+
+  document.querySelector(".overlay").style.display="none"
+document.querySelector(".loader").style.display="none"
+}
 })

